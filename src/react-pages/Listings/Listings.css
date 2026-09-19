@@ -1,4 +1,6 @@
 .listings-page {
+  width: 100%;
+  min-width: 0;
   padding-top: 80px;
   min-height: 100vh;
   background: white;
@@ -27,12 +29,14 @@
 }
 
 .listings-container {
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
   z-index: 2;
   min-height: 200px;
+  min-width: 0;
 }
 
 /* NEW LOADING ANIMATIONS */
@@ -437,12 +441,14 @@
 
 .search-bar {
   position: relative;
-  max-width: 400px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .search-bar input {
   width: 100%;
+  min-width: 0;
   padding: 0.9rem 0.9rem 0.9rem 3rem;
   border: 2px solid #e2e8f0;
   border-radius: 12px;
@@ -1101,6 +1107,11 @@
 }
 
 @media (max-width: 480px) {
+  .listings-container {
+    width: 100%;
+    padding: 0 0.75rem;
+  }
+
   .listings-header {
     padding: 2rem 0 1.2rem;
   }
@@ -1110,12 +1121,15 @@
   }
 
   .listings-filters {
+    width: 100%;
     padding: 1rem;
     margin: -7rem 0 1.2rem;
   }
 
   .search-bar input {
+    min-height: 48px;
     padding: 0.8rem 0.8rem 0.8rem 2.8rem;
+    font-size: 1rem;
   }
 
   .listing-content {

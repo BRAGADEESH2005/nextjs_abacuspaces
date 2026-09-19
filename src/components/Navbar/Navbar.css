@@ -139,7 +139,8 @@
   border-bottom: 1.5px solid rgba(127, 20, 22, 0.3);
   padding-bottom: 0.3rem;
   transition: border-color 0.3s ease;
-  min-width: 300px;
+  width: 100%;
+  min-width: 0;
 }
 
 .nav-search-bar:focus-within {
@@ -359,6 +360,7 @@
   font-size: 0.9rem;
   padding: 0;
   min-width: 0;
+  width: 100%;
 }
 
 .mobile-search-input::placeholder {
@@ -377,6 +379,10 @@
   align-items: center;
   justify-content: center;
   font-size: 1rem;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  padding: 0.75rem;
   transition: transform 0.3s ease;
   flex-shrink: 0;
 }
