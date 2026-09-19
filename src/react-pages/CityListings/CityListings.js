@@ -90,12 +90,12 @@ const slugifyPathSegment = (value) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-const CityListings = ({ city }) => {
+const CityListings = ({ city, propertyType = "all" }) => {
   const citySlug = slugifyPathSegment(city || "");
 
   const cityData = CITIES_SEO_DATA[citySlug];
 
-  const selectedTypeFromRoute = "all";
+  const selectedTypeFromRoute = propertyType;
 
   const listingPath = cityData ? `/locations/${citySlug}` : "/listings";
   // States

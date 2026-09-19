@@ -1,4 +1,5 @@
 import CityListings from "../../react-pages/CityListings/CityListings";
+import { parseCityListingPath } from "../../utils/seoConfig";
 
 export const metadata = {
   title: "Commercial Properties for Rent in India | Abacus Spaces",
@@ -9,6 +10,14 @@ export const metadata = {
   },
 };
 
-export default function Page() {
-  return <CityListings />;
+export default async function Page({ params }) {
+  const { listingSlug } = await params;
+  const routeDetails = parseCityListingPath(listingSlug);
+
+  return (
+    <CityListings
+      city={routeDetails?.citySlug || listingSlug}
+      propertyType={routeDetails?.propertyType || "all"}
+    />
+  );
 }
