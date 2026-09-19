@@ -1,0 +1,30 @@
+# Abacus Spaces - robots.txt
+# SEO Optimization for Commercial Real Estate Website
+
+# Allow all search engines
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /api/
+Disallow: /private/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Crawl delay for other bots
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap locations for better indexing
+Sitemap: https://abacuspaces.com/sitemap.xml
+Sitemap: https://abacuspaces.com/sitemap-cities.xml
+

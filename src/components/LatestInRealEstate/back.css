@@ -1,0 +1,516 @@
+.latest-estate-section {
+  padding: 1rem 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f5 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.estate-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.estate-main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a2f5c;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.estate-main-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #7f1416, #555471);
+  border-radius: 2px;
+}
+
+/* Tabs Navigation */
+.estate-tabs {
+  display: flex;
+  justify-content: flex start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(127, 20, 22, 0.2);
+  padding-bottom: 0;
+}
+
+.estate-tab {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #718096;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.estate-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #7f1416;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.estate-tab:hover {
+  color: #7f1416;
+}
+
+.estate-tab.active {
+  color: #7f1416;
+}
+
+.estate-tab.active::after {
+  transform: scaleX(1);
+}
+
+/* Content Wrapper */
+.estate-content-wrapper {
+  position: relative;
+  padding: 0 3rem;
+}
+
+/* Scroll Controls */
+.estate-scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: white;
+  color: #7f1416;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+.estate-scroll-btn-left {
+  left: 0;
+}
+
+.estate-scroll-btn-right {
+  right: 0;
+}
+
+.estate-scroll-btn:hover {
+  background: #7f1416;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(127, 20, 22, 0.4);
+}
+
+.estate-scroll-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Cards Container */
+.estate-cards-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.estate-cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Loading Animation */
+.estate-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  width: 100%;
+}
+
+.estate-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.estate-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(127, 20, 22, 0.1);
+  border-top-color: #7f1416;
+  border-radius: 50%;
+  animation: estate-spin 0.8s linear infinite;
+}
+
+@keyframes estate-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.estate-loading-text {
+  font-size: 1.1rem;
+  color: #4a5568;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.estate-loading-dots {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.estate-dot {
+  width: 6px;
+  height: 6px;
+  background: #7f1416;
+  border-radius: 50%;
+  animation: estate-bounce 1.4s infinite;
+}
+
+.estate-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.estate-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes estate-bounce {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+}
+
+/* Card Styles */
+.estate-card {
+  flex: 0 0 320px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.estate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(127, 20, 22, 0.2);
+}
+
+.estate-card-image {
+  position: relative;
+  width: 100%;
+  height: 175px;
+  overflow: hidden;
+}
+
+.estate-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.estate-card:hover .estate-card-image img {
+  transform: scale(1.1);
+}
+
+.estate-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 47, 92, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.estate-card:hover .estate-card-overlay {
+  opacity: 1;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #7f1416;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(127, 20, 22, 0.3);
+}
+
+.download-btn:hover {
+  background: #7f1416;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(127, 20, 22, 0.4);
+}
+
+.download-btn svg {
+  font-size: 1rem;
+}
+
+/* Card Content */
+.estate-card-content {
+  padding: 1.5rem;
+}
+
+.estate-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.estate-card-date {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.estate-card-divider {
+  color: #cbd5e0;
+}
+
+.estate-card-category {
+  color: #7f1416;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.estate-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 3.3rem;
+}
+
+/* View All Button */
+.estate-view-all-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.estate-view-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #7f1416 0%, #5a0d10 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(127, 20, 22, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.estate-view-all-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.estate-view-all-btn:hover::before {
+  left: 100%;
+}
+
+.estate-view-all-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(127, 20, 22, 0.5);
+}
+
+.estate-view-all-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.view-all-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.estate-view-all-btn:hover .view-all-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .estate-container {
+    padding: 0 1.5rem;
+  }
+
+  .estate-card {
+    flex: 0 0 300px;
+  }
+
+  .estate-content-wrapper {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .latest-estate-section {
+    padding: 2rem 0;
+  }
+
+  .estate-container {
+    padding: 0 1rem;
+  }
+
+  .estate-main-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .estate-tabs {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .estate-tab {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .estate-card {
+    flex: 0 0 280px;
+  }
+
+  .estate-content-wrapper {
+    padding: 0 2rem;
+  }
+
+  .estate-scroll-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .estate-view-all-btn {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .estate-main-title {
+    font-size: 1.75rem;
+  }
+
+  .estate-tabs {
+    gap: 0.5rem;
+  }
+
+  .estate-tab {
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .estate-card {
+    flex: 0 0 260px;
+  }
+
+  .estate-card-image {
+    height: 180px;
+  }
+
+  .estate-card-content {
+    padding: 1rem;
+  }
+
+  .estate-card-title {
+    font-size: 1rem;
+  }
+
+  .download-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .estate-content-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .estate-scroll-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .estate-view-all-btn {
+    padding: 0.8rem 1.75rem;
+    font-size: 0.95rem;
+  }
+
+  .estate-view-all-wrapper {
+    margin-top: 2rem;
+  }
+}

@@ -1,13 +1,37 @@
+@import url("../index.css");
+@import url("../App.css");
+@import url("../components/Navbar/Navbar.css");
+@import url("../components/Footer/Footer.css");
+@import url("../components/Hero/Hero.css");
+@import url("../components/LatestInRealEstate/LatestInRealEstate.css");
+@import url("../components/LatestInRealEstate/back.css");
+@import url("../components/WhyAbacus/WhyAbacus.css");
+@import url("../components/RegionsMap/RegionsMap.css");
+@import url("../components/RegionsMap/back.css");
+@import url("../components/RegionsMap/colorback.css");
+@import url("../components/ResidentialBanner/ResidentialBanner.css");
+@import url("../components/Services/Services.css");
+@import url("../components/CallToAction/CallToAction.css");
+@import url("../components/UserInfoPopup/UserInfoPopup.css");
+@import url("../components/VideoAnimation/VideoAnimation.css");
+@import url("../react-pages/AboutUs/AboutUs.css");
+@import url("../react-pages/Contact/Contact.css");
+@import url("../react-pages/Careers/Careers.css");
+@import url("../react-pages/SpaceCalculator/SpaceCalculator.css");
+@import url("../react-pages/PrivacyPolicy/PrivacyPolicy.css");
+@import url("../react-pages/RERA/RERARegistration.css");
+@import url("../react-pages/InsightsReports/InsightsReports.css");
+@import url("../react-pages/Listings/Listings.css");
+@import url("../react-pages/DetailedReport/DetailedReport.css");
+@import url("../react-pages/Admin/Admin.css");
+@import url("../react-pages/Admin/ContentManagement/ContentManagement.css");
+@import url("../react-pages/Admin/HeatmapManagement/HeatmapManagement.css");
+@import url("../react-pages/Admin/LeadsManagement/LeadsManagement.css");
+@import url("../react-pages/Admin/SubscriptionManagement/SubscriptionManagement.css");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 html {
@@ -40,10 +64,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

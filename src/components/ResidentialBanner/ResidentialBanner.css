@@ -1,0 +1,222 @@
+.residential-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url("../../assets/browse_page_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Dark overlay for better text readability */
+.residential-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 47, 92, 0.85) 0%,
+    rgba(15, 28, 54, 0.75) 50%,
+    rgba(35, 198, 164, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+/* Content Container */
+.residential-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Title */
+.residential-banner-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+/* Subtitle */
+.residential-banner-subtitle {
+  font-size: 1.4rem;
+  color: #e2e8f0;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Browse Button */
+.residential-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7f1416 0%, #5a0d10 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(127, 20, 22, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 1s ease-out 0.6s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.residential-banner-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.residential-banner-btn:hover::before {
+  left: 100%;
+}
+
+.residential-banner-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(127, 20, 22, 0.6);
+  background: linear-gradient(135deg, #7f1416 0%, #5a0d10 100%);
+}
+
+.residential-banner-btn:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(127, 20, 22, 0.5);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet Responsive (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .residential-banner {
+    height: 450px;
+    background-attachment: scroll;
+  }
+
+  .residential-banner-title {
+    font-size: 2.5rem;
+  }
+
+  .residential-banner-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .residential-banner-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Responsive (max-width: 768px) */
+@media (max-width: 768px) {
+  .residential-banner {
+    height: 400px;
+    background-attachment: scroll;
+  }
+
+  .residential-banner-content {
+    padding: 1.5rem;
+  }
+
+  .residential-banner-title {
+    font-size: 2rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .residential-banner-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .residential-banner-btn {
+    padding: 0.9rem 2.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .residential-banner {
+    height: 350px;
+  }
+
+  .residential-banner-content {
+    padding: 1rem;
+  }
+
+  .residential-banner-title {
+    font-size: 1.65rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .residential-banner-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .residential-banner-btn {
+    padding: 0.85rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Mobile (max-width: 360px) */
+@media (max-width: 360px) {
+  .residential-banner {
+    height: 320px;
+  }
+
+  .residential-banner-title {
+    font-size: 1.45rem;
+  }
+
+  .residential-banner-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .residential-banner-btn {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.85rem;
+  }
+}

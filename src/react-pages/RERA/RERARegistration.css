@@ -1,0 +1,315 @@
+.rera-container {
+  padding: 100px 20px 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  min-height: 100vh;
+}
+
+.rera-heading-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rera-heading-with-logo h1 {
+  margin-bottom: 0;
+}
+
+.rera-content {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+.rera-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a2f5c;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  border-bottom: 3px solid #7f1416;
+  padding-bottom: 1rem;
+}
+
+.rera-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a2f5c;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rera-content h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #7f1416;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Paragraphs */
+.rera-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 1.25rem;
+}
+
+.rera-content p strong {
+  color: #1a2f5c;
+  font-weight: 600;
+}
+
+/* Lists */
+.rera-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.rera-content ul li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.rera-content ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0.5rem;
+  color: #7f1416;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.rera-content ul li strong {
+  color: #1a2f5c;
+  font-weight: 600;
+}
+
+/* Horizontal Rules */
+.rera-content hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #7f1416, transparent);
+  margin: 2.5rem 0;
+  opacity: 0.5;
+}
+
+/* Disclaimer Box */
+.rera-disclaimer {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.rera-disclaimer h3 {
+  color: #92400e;
+  margin-top: 0;
+}
+
+.rera-disclaimer p {
+  color: #78350f;
+  margin-bottom: 0;
+}
+
+/* Navigation Links */
+.rera-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.rera-navigation a {
+  color: #7f1416;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(127, 20, 22, 0.05);
+}
+
+.rera-navigation a:hover {
+  background: #7f1416;
+  color: white;
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(127, 20, 22, 0.3);
+}
+
+.rera-navigation span {
+  color: #cbd5e1;
+  font-weight: normal;
+}
+
+/* Highlight Box */
+.rera-highlight {
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+  border-left: 4px solid #7f1416;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.rera-highlight p {
+  margin-bottom: 0;
+  color: #0c4a6e;
+}
+
+/* Compliance Badge */
+.rera-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #7f1416 0%, #a41b1f 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 15px rgba(127, 20, 22, 0.3);
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+  .rera-container {
+    padding: 80px 15px 40px 15px;
+  }
+
+  .rera-content {
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .rera-content h1 {
+    font-size: 1.85rem;
+  }
+
+  .rera-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .rera-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .rera-content p,
+  .rera-content ul li {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .rera-navigation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rera-navigation a {
+    justify-content: center;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .rera-container {
+    padding: 70px 10px 30px 10px;
+  }
+
+  .rera-content {
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  .rera-content h1 {
+    font-size: 1.5rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .rera-content h2 {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .rera-content h3 {
+    font-size: 1.1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rera-content p,
+  .rera-content ul li {
+    font-size: 0.95rem;
+  }
+
+  .rera-content ul li {
+    padding-left: 1.5rem;
+  }
+
+  .rera-disclaimer,
+  .rera-highlight {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .rera-navigation a {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.85rem;
+  }
+
+  .rera-badge {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .rera-content {
+    padding: 1.25rem 0.85rem;
+  }
+
+  .rera-content h1 {
+    font-size: 1.35rem;
+  }
+
+  .rera-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .rera-content h3 {
+    font-size: 1rem;
+  }
+
+  .rera-content p,
+  .rera-content ul li {
+    font-size: 0.9rem;
+  }
+}

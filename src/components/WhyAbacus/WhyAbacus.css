@@ -1,0 +1,577 @@
+.why-abacus {
+  position: relative;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #854142 0%, #7f1416 100%);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.why-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* Header */
+.why-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.why-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.why-badge svg {
+  font-size: 0.9rem;
+}
+
+.why-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.why-subtext {
+  font-size: 1rem;
+  color: #ffb347;
+  margin: 0.5rem 0 0 0;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* Root Lines from Heading */
+.root-lines {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 50px;
+}
+
+.root-center {
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 215, 0, 0.8),
+    rgba(255, 215, 0, 0.4)
+  );
+  box-shadow: 0 0 10px rgb(214, 190, 10);
+  left: 0;
+  top: 0;
+}
+
+.root-lines.show .root-center {
+  animation: rootGrow 0.8s ease-out forwards;
+}
+
+@keyframes rootGrow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 50px;
+  }
+}
+
+/* Pillars Section */
+.pillars-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  padding: 2rem 0;
+  flex-wrap: nowrap;
+}
+
+/* Individual Pillar */
+.pillar-item {
+  flex: 0 0 auto;
+  opacity: 0;
+}
+
+.pillar-item.animate-draw {
+  animation: pillarFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes pillarFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.pillar-structure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+}
+
+/* CAPITAL (Top decorative part) */
+.pillar-capital {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.pillar-item.animate-draw .pillar-capital {
+  animation: drawCapital 1.2s ease-out 0.8s forwards;
+}
+
+@keyframes drawCapital {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.capital-abacus {
+  width: 100%;
+  height: 12px;
+  background: transparent;
+  border-top: 2px solid #ffd700;
+  border-bottom: 2px solid #ffb347;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.capital-echinus {
+  width: 95%;
+  height: 15px;
+  background: transparent;
+  border: 2px solid #ffd700;
+  border-radius: 0 0 40% 40%;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+  margin-top: -2px;
+}
+
+.capital-neck {
+  width: 85%;
+  height: 8px;
+  background: transparent;
+  border-left: 1px solid #ffb347;
+  border-right: 1px solid #ffb347;
+  border-bottom: 2px solid #ffd700;
+  border-radius: 2px;
+}
+
+/* SHAFT (Main column body) */
+.pillar-shaft {
+  position: relative;
+  width: 85%;
+  min-height: 240px;
+  background: transparent;
+  border-left: 2px solid #ffd700;
+  border-right: 2px solid #ffb347;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  overflow: hidden;
+  clip-path: inset(100% 0 0 0);
+}
+
+.pillar-item.animate-draw .pillar-shaft {
+  animation: drawShaft 1.2s ease-out forwards;
+}
+
+@keyframes drawShaft {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Fluting (vertical grooves on pillar) */
+.shaft-flute {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 215, 0, 0.2),
+    rgba(255, 215, 0, 0.5),
+    rgba(255, 215, 0, 0.2)
+  );
+  top: 0;
+}
+
+.shaft-flute-1 {
+  left: 15%;
+}
+
+.shaft-flute-2 {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shaft-flute-3 {
+  right: 15%;
+}
+
+/* Content inside pillar */
+.pillar-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+.pillar-item.animate-draw .pillar-content {
+  animation: contentFadeIn 0.6s ease-out 1.4s forwards;
+}
+
+@keyframes contentFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.pillar-icon {
+  font-size: 1.8rem;
+  color: #ffb347;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.pillar-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 0.6rem 0;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.pillar-description {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* BASE (Bottom part) */
+.pillar-base {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.pillar-item.animate-draw .pillar-base {
+  animation: drawBase 1.2s ease-out 0.4s forwards;
+}
+
+@keyframes drawBase {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.base-torus {
+  width: 90%;
+  height: 12px;
+  background: transparent;
+  border: 2px solid #ffd700;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+.base-plinth {
+  width: 100%;
+  height: 14px;
+  background: transparent;
+  border-top: 2px solid #ffd700;
+  border-bottom: 2px solid #ffb347;
+  border-left: 1px solid #ffb347;
+  border-right: 1px solid #ffb347;
+  border-radius: 2px;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+/* Connecting Lines */
+.connecting-line {
+  flex: 0 0 60px;
+  height: 3px;
+  position: relative;
+  align-self: center;
+  margin: 0 -1px;
+}
+
+.line-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 215, 0, 0.3),
+    rgba(255, 215, 0, 0.9),
+    rgba(255, 215, 0, 0.3)
+  );
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+.connecting-line.animate-line .line-inner {
+  animation: lineGrow 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes lineGrow {
+  to {
+    width: 100%;
+  }
+}
+
+/* Hover Effects */
+.pillar-item:hover .pillar-shaft {
+  box-shadow: inset 0 0 12px rgba(255, 215, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+.pillar-item:hover .pillar-icon {
+  transform: scale(1.2) rotate(5deg);
+  color: #ffd700;
+}
+
+.pillar-item:hover .pillar-capital,
+.pillar-item:hover .pillar-base {
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.5));
+  transition: filter 0.3s ease;
+}
+
+.pillar-item:hover .pillar-title {
+  color: #ffd700;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .pillar-structure {
+    width: 120px;
+  }
+
+  .pillar-shaft {
+    min-height: 220px;
+    padding: 1.3rem 0.9rem;
+  }
+
+  .connecting-line {
+    flex: 0 0 50px;
+  }
+
+  .pillar-icon {
+    font-size: 1.5rem;
+  }
+
+  .pillar-title {
+    font-size: 0.8rem;
+  }
+
+  .pillar-description {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pillar-structure {
+    width: 110px;
+  }
+
+  .connecting-line {
+    flex: 0 0 40px;
+  }
+
+  .pillar-shaft {
+    min-height: 200px;
+    padding: 1.2rem 0.8rem;
+  }
+
+  .pillar-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .pillar-title {
+    font-size: 0.75rem;
+  }
+
+  .pillar-description {
+    font-size: 0.62rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .why-abacus {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+
+  .why-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .pillars-section {
+    flex-wrap: wrap;
+    gap: 3rem 2rem;
+    align-items: flex-start;
+  }
+
+  .pillar-structure {
+    width: 140px;
+  }
+
+  .pillar-shaft {
+    min-height: 220px;
+  }
+
+  .connecting-line {
+    display: none;
+  }
+
+  .root-lines {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-abacus {
+    padding: 2.5rem 0;
+  }
+
+  .why-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .why-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .why-badge {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.9rem;
+  }
+
+  .pillars-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .pillar-structure {
+    width: 160px;
+  }
+
+  .pillar-shaft {
+    min-height: 200px;
+  }
+
+  /* Vertical connecting lines for mobile */
+  .connecting-line {
+    display: block;
+    flex: 0 0 60px;
+    width: 3px;
+    height: 60px;
+    margin: 0;
+  }
+
+  .line-inner {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 215, 0, 0.3),
+      rgba(255, 215, 0, 0.9),
+      rgba(255, 215, 0, 0.3)
+    );
+  }
+
+  .connecting-line.animate-line .line-inner {
+    animation: lineGrowVertical 0.8s ease-out forwards;
+  }
+
+  @keyframes lineGrowVertical {
+    to {
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .why-container {
+    padding: 0 1rem;
+  }
+
+  .why-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .pillars-section {
+    gap: 0;
+  }
+
+  .pillar-structure {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .pillar-shaft {
+    min-height: 190px;
+    padding: 1.2rem 1rem;
+  }
+
+  .pillar-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .pillar-title {
+    font-size: 0.85rem;
+  }
+
+  .pillar-description {
+    font-size: 0.68rem;
+  }
+
+  .connecting-line {
+    height: 50px;
+    flex: 0 0 50px;
+  }
+}
+/* Fluting (vertical grooves on pillar) - REMOVED */
+.shaft-flute {
+  display: none;
+}
